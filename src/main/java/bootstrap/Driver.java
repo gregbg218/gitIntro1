@@ -17,12 +17,12 @@ public class Driver {
 
     public static void main(String[] args) throws Exception
     {
-        configureLogging("gitIntroLogs", false);
-        System.out.println("Hello world");
+        configureLogging("var/log/gitIntro/", false,System.currentTimeMillis());
+        logger.info("Hello world");
     }
 
 
-    public static String configureLogging(String logDirectory, boolean debug) {
+    public static String configureLogging(String logDirectory, boolean debug , long startTimeMs) {
         DailyRollingFileAppender dailyRollingFileAppender = new DailyRollingFileAppender();
 
         String logFileName = "";
